@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'iof5y6+xiy1qr5pfe8lmmn@$m9px0mp)3hfpn*kxw@j7z6e1l%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1','tourguidewebportal.herokuapp.com']
 
