@@ -1,0 +1,284 @@
+{% extends 'base.html' %}
+{% block title %}
+Contact
+{% endblock title %}
+{% block css %}
+/* Footer */
+
+
+/* End of Footer*/
+
+/* Form*/
+*{
+  
+	font-family: 'Quicksand', sans-serif;
+}
+
+
+
+.container-contact{
+  top: 124px;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px 100px;
+}
+
+.container-contact:after{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background: black;
+	background-size: cover;
+	filter: blur(50px);
+	z-index: -1;
+}
+.contact-box{
+    top:20px;
+	max-width: 850px;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	background-color: #fff;
+	box-shadow: 0px 0px 19px 5px rgba(0,0,0,0.19);
+}
+
+.left{
+	background: url(/static/c1.jpg);
+	background-size: cover;
+	height: 100%;
+}
+
+.right{
+	padding: 25px 40px;
+}
+
+h2{
+	position: relative;
+	padding: 0 0 10px;
+	margin-bottom: 10px;
+	top: 0;
+}
+
+h2:after{
+	content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 4px;
+    width: 50px;
+    border-radius: 2px;
+    background-color: #2ecc71;
+}
+
+.field{
+	width: 100%;
+	border: 2px solid rgba(0, 0, 0, 0);
+	outline: none;
+	background-color: rgba(230, 230, 230, 0.6);
+	padding: 0.5rem 1rem;
+	font-size: 1.1rem;
+	margin-bottom: 22px;
+	transition: .3s;
+}
+
+.field:hover{
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+textarea{
+	min-height: 150px;
+}
+
+.btn1{
+	width: 100%;
+	padding: 0.5rem 1rem;
+	background-color: #2ecc71;
+	color: #fff;
+	font-size: 1.1rem;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	transition: .3s;
+}
+
+.btn1:hover{
+    background-color: #27ae60;
+}
+
+.field:focus{
+    border: 2px solid rgba(30,85,250,0.47);
+    background-color: #fff;
+}
+
+
+
+.form{
+    top:20px;
+}
+
+/* End of Form*/
+
+
+{% endblock css %}
+{% block body %}
+{% comment %} <div class="container-fluid px-0">
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/static/contact.jpg" class="d-block w-100 mx-0" alt="...">
+                <div class="carousel-caption d-none d-md-block"
+                    style=" width: 100%;height: 100%;background: rgba(0, 0, 0, 0.7);padding-top: 19vmin0;left:0%;">
+                    <h5
+                        style="font-family: var(--Patua);font-size: 10vmin;color: whitesmoke;position: absolute;top: 257px;left: 587px;">
+                        CONTACT US</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div id="text-6" class="widget column widget_text">
+        <h2>United State of America</h2>
+        <div class="textwidget">
+            <ul>
+                <li><i class="fas fa-location-arrow"></i> 44479 cayuga dr St. louis, MO 63123</li>
+                <li><i class="fas fa-phone-alt"></i> + 314 4897247</li>
+                <li><i class="fas fa-envelope"></i> <a href="mailto:suru@travelmaxguide.com">suru@travelmaxguide.com</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div> 
+<div class="container" style="margin-top: 50px; align-items: center;box-shadow: 1px 1px 1px 2px rgb(0 0 0 / 10%);"> {% endcomment %}
+    {% comment %} <form method="post" action="/contact">
+         {% csrf_token %} 
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name">
+        </div>
+        <div class="mb-3">
+            <label for="phone" class="form-label">Phone numbers</label>
+            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter Your contact Number">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+        </div>
+        <div class="mb-3">
+            <label for="desc" class="form-label">Tell me why you what to contact us?</label>
+            <textarea class="form-control" id="desc" rows="3" name="desc"></textarea>
+        </div>
+
+        <button class="btn btn-primary active" type="submit">Submit</button>
+
+
+    </form> {% endcomment %}
+    <form method="post" action="/contact">
+    <div class="container-contact">
+		<div class="contact-box">
+			<div class="left"></div>
+			<div class="right">
+         {% csrf_token %} 
+		 <h2>Contact Us</h2>
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="field" id="name" name="name" placeholder="Enter Your Name" required>
+        </div>
+        <div class="mb-3">
+            <label for="phone" class="form-label">Phone numbers</label>
+            <input type="tel" class="field" id="phone" name="phone" placeholder="Enter Your contact Number" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="field" id="email" name="email" placeholder="name@example.com" required>
+        </div>
+        <div class="mb-3">
+            <label for="desc" class="form-label">Tell me why you what to contact us?</label>
+            <textarea class="field" id="desc" rows="3" name="desc" required></textarea>
+        </div>
+
+        <button class="btn1 " type="submit">Submit</button>
+
+
+
+    </form>
+
+
+
+ {% comment %} <footer> 
+    <div class="container-fluid p-0">
+      <div class="row text-left">
+        <div class="col-md-5 col-sm-5">
+          <h4 class="text-light">About us</h4>
+          <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum maxime ea similique illum corrupti</p>
+          <p class="pt-4 text-muted">Copyright ©2019 All rights reserved | This template is made with by
+            <span> Daily Tuition</span>
+          </p>
+        </div>
+        <div class="col-md-5 col-sm-12">
+          <h4 class="text-light">Newsletter</h4>
+          <p class="text-muted">Stay Updated</p>
+          <form class="form-inline">
+            <div class="col pl-0">
+              <div class="input-group pr-5">
+                <input type="text" class="form-control bg-dark text-white" id="inlineFormInputGroupUsername2" placeholder="Email">
+                <div class="input-group-prepend">
+                  <div class="input-group-text" style="background:white">
+                  <form>
+                    <i class="fa fa-arrow-right" style="font-size:35px;color:black"></i>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-2 col-sm-12 " >
+          <h4 class="text-light mx-3">Follow Us</h4>
+          <p class="text-muted mx-3">Let us be social</p>
+          <div class="column text-light" style="height">
+             <link rel="stylesheet"
+                    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                <!-- Add font awesome icons -->
+                <a href="#" class="fa fa-facebook"
+                    style="padding: 20px;font-size: 30px;width: 30px; text-align: center;text-decoration: none;opacity: 0.7;color:white;" ></a>
+                <a href="#" class="fa fa-twitter"
+                    style="padding: 20px;font-size: 30px;width: 30px; text-align: center;text-decoration: none;opacity: 0.7;color:white;"></a> 
+                <a href="#" class="fa fa-instagram"
+                    style="padding: 20px;font-size: 30px;width: 50px; text-align: center;text-decoration: none;opacity: 0.7;color:white;"></a>
+                <a href="#" class="fa fa-youtube"
+                    style="padding: 20px;font-size: 30px;width: 50px; text-align: center;text-decoration: none;opacity: 0.7;color:white;"></a>
+                <a href="#" class="fa fa-linkedin"
+                    style="padding: 20px;font-size: 30px;width: 50px; text-align: center;text-decoration: none;opacity: 0.7;color:white;"></a>
+                <a href="#" class="fa fa-snapchat-ghost"
+                    style="padding: 20px;font-size: 30px;width: 50px; text-align: center;text-decoration: none;opacity: 0.7;color:white;"></a>
+          </div>
+    
+        </div>
+      </div>
+    </div>
+  </footer> {% endcomment %}
+
+
+{% endblock body %}
+
+
+{%block js%}
+<script>
+{% if thank %}
+alert('Thanks for contacting us. We wil get back to you soon!');
+document.location = "/";
+
+{%endif%}
+</script>
+{% endblock js %}
